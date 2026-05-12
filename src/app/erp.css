@@ -1,0 +1,832 @@
+/* ERP lab admin shell, components, and screen-specific styles. */
+
+/* Reset / Base */
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-neutral);
+  background: #f4f5f7;
+  margin: 0;
+}
+
+/* App shell */
+.erp {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  background: #f4f5f7;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.erp-side {
+  background: #ffffff;
+  border-right: 1px solid var(--line-subtle);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.erp-brand {
+  padding: 4px 8px 0;
+}
+.erp-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: #000;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+.erp-brand-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.012em;
+}
+.erp-brand-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fg-normal);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.erp-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.erp-nav-h {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-normal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0 10px 8px;
+}
+.erp-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-strong);
+  text-decoration: none;
+}
+.erp-nav-item.is-active {
+  background: #eaf2fe;
+  color: var(--brand-primary);
+}
+.erp-nav-item svg {
+  width: 18px;
+  height: 18px;
+}
+
+.erp-side-foot {
+  margin-top: auto;
+  padding: 12px 10px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 11px;
+  color: var(--fg-normal);
+  letter-spacing: 0.025em;
+}
+
+.erp-main {
+  padding: 32px 40px 40px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Page header */
+.erp-page-h {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.erp-page-h h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.0236em;
+  margin: 0;
+}
+.erp-page-h .sub {
+  font-size: 14px;
+  color: var(--fg-normal);
+  margin: 0;
+  letter-spacing: 0.0096em;
+}
+
+/* Tabs */
+.erp-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+.erp-tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-normal);
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  text-decoration: none;
+}
+.erp-tab .count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-alternative);
+}
+.erp-tab.is-active {
+  color: #000;
+  border-bottom-color: #000;
+}
+.erp-tab.is-active .count {
+  color: #000;
+}
+
+/* Card */
+.erp-card {
+  background: #ffffff;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Table */
+.erp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.erp-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-normal);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  background: #fafafb;
+  border-bottom: 1px solid var(--line-subtle);
+}
+.erp-table tbody td {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--fg-strong);
+  border-bottom: 1px solid var(--line-subtle);
+  vertical-align: middle;
+}
+.erp-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.erp-table tbody tr:hover td {
+  background: rgba(112, 115, 124, 0.04);
+}
+.erp-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.erp-table .right {
+  text-align: right;
+}
+.erp-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+.erp-amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: #000;
+}
+.erp-cust-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.erp-cust-id {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--fg-strong);
+  font-weight: 500;
+}
+
+/* Status pills */
+.erp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  font-family: var(--font-mono);
+}
+.erp-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  opacity: 0.9;
+}
+.erp-pill.is-draft {
+  background: var(--pill-neutral-bg);
+  color: var(--fg-normal);
+}
+.erp-pill.is-pending {
+  background: var(--pill-pending-bg);
+  color: var(--pill-pending-fg);
+}
+.erp-pill.is-approved {
+  background: var(--status-positive-bg);
+  color: var(--status-positive-fg);
+}
+.erp-pill.is-rejected {
+  background: var(--pill-rejected-bg);
+  color: var(--pill-rejected-fg);
+}
+.erp-pill.is-cancelled {
+  background: var(--pill-neutral-bg);
+  color: var(--fg-normal);
+}
+
+/* Grade chips */
+.erp-grade {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.025em;
+}
+.erp-grade.is-gold {
+  background: var(--grade-gold-bg);
+  color: var(--grade-gold-fg);
+}
+.erp-grade.is-silver {
+  background: var(--grade-silver-bg);
+  color: var(--grade-silver-fg);
+}
+.erp-grade.is-normal {
+  background: var(--grade-normal-bg);
+  color: var(--grade-normal-fg);
+}
+
+/* Bottom info banner */
+.erp-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid var(--line-subtle);
+  border-radius: 14px;
+}
+.erp-banner-ico {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--pill-pending-bg);
+  color: var(--pill-pending-fg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.erp-banner-ico svg {
+  width: 18px;
+  height: 18px;
+}
+.erp-banner-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.erp-banner-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+}
+.erp-banner-sub {
+  font-size: 13px;
+  color: var(--fg-normal);
+}
+.erp-banner-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-link);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+/* Detail page */
+.erp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-normal);
+  padding: 0;
+  text-decoration: none;
+}
+.erp-back:hover {
+  color: var(--fg-strong);
+}
+.erp-back svg {
+  width: 16px;
+  height: 16px;
+}
+
+.erp-detail-h {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+.erp-detail-h h1 {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #000;
+  margin: 0;
+}
+.erp-detail-sub {
+  font-size: 14px;
+  color: var(--fg-normal);
+  margin: 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.erp-detail-sub .dot {
+  color: var(--fg-alternative);
+}
+.erp-detail-sub .cust-mono {
+  font-family: var(--font-mono);
+  color: var(--fg-strong);
+  font-weight: 600;
+}
+
+/* Timeline */
+.erp-timeline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  padding: 28px 32px;
+  background: #ffffff;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-lg);
+}
+.erp-tl-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.erp-tl-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.erp-tl-circle.is-done {
+  background: var(--status-positive);
+  color: #fff;
+}
+.erp-tl-circle.is-current {
+  background: #fff;
+  color: var(--status-cautionary);
+  border: 2px solid var(--status-cautionary);
+  box-shadow: 0 0 0 6px rgba(255, 146, 0, 0.16);
+}
+.erp-tl-circle.is-future {
+  background: #eaebec;
+  color: #5a5c63;
+  border: 2px solid #c2c4c8;
+}
+.erp-tl-circle svg {
+  width: 20px;
+  height: 20px;
+}
+.erp-tl-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.erp-tl-label-t {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+}
+.erp-tl-label-s {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--fg-normal);
+  letter-spacing: 0.02em;
+}
+.erp-tl-step.is-future .erp-tl-label-t {
+  color: var(--fg-strong);
+}
+.erp-tl-step.is-current .erp-tl-label-s {
+  color: var(--status-cautionary);
+}
+.erp-tl-line {
+  height: 2px;
+  background: var(--line-strong);
+  align-self: center;
+  margin: 0 8px;
+  border-radius: 1px;
+  min-width: 40px;
+}
+.erp-tl-line.is-done {
+  background: var(--status-positive);
+}
+
+/* Info cards */
+.erp-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.erp-info-card {
+  background: #fff;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.erp-info-h {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.erp-info-h::before {
+  content: "";
+  width: 3px;
+  height: 12px;
+  background: #000;
+  border-radius: 2px;
+}
+.erp-info-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 13px;
+}
+.erp-info-row + .erp-info-row {
+  border-top: 1px dashed var(--line-subtle);
+}
+.erp-info-row .k {
+  color: var(--fg-normal);
+}
+.erp-info-row .v {
+  color: var(--fg-strong);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.erp-info-row .v.mono {
+  font-family: var(--font-mono);
+}
+.erp-info-row .v .status-code {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--fg-normal);
+  font-size: 12px;
+}
+
+/* Items card */
+.erp-items-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+.erp-items-h .t {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.erp-items-h .t::before {
+  content: "";
+  width: 3px;
+  height: 12px;
+  background: #000;
+  border-radius: 2px;
+}
+.erp-items-h .c {
+  font-size: 12px;
+  color: var(--fg-normal);
+}
+.erp-items-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #fafafb;
+  border-top: 1px solid var(--line-subtle);
+}
+.erp-items-foot .l {
+  font-size: 13px;
+  color: var(--fg-normal);
+  font-weight: 600;
+}
+.erp-items-foot .r {
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.012em;
+}
+
+/* Stock cell */
+.erp-stock-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.erp-stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+}
+.erp-stock.is-ok {
+  background: var(--status-positive-bg);
+  color: var(--status-positive-fg);
+}
+.erp-stock.is-low {
+  background: var(--pill-rejected-bg);
+  color: var(--pill-rejected-fg);
+}
+.erp-stock-num {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.erp-stock-num.is-low {
+  color: var(--pill-rejected-fg);
+}
+
+/* Action box */
+.erp-action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #ffffff;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-lg);
+}
+.erp-action.is-blocked {
+  background: #fffafa;
+  border-color: #fed5d5;
+}
+.erp-action-msg {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg-strong);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.0057em;
+}
+.erp-action-msg svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--fg-normal);
+}
+.erp-action.is-blocked .erp-action-msg {
+  color: var(--pill-rejected-fg);
+}
+.erp-action.is-blocked .erp-action-msg svg {
+  color: var(--pill-rejected-fg);
+}
+
+.erp-btn {
+  background: var(--brand-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 10px;
+  letter-spacing: 0.0057em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease-out;
+}
+.erp-btn:hover {
+  background: var(--brand-primary-hover);
+}
+.erp-btn:active {
+  background: var(--brand-primary-press);
+}
+.erp-btn:disabled {
+  background: #dbdcdf;
+  color: rgba(55, 56, 60, 0.43);
+  cursor: not-allowed;
+}
+.erp-btn.is-secondary {
+  background: #fff;
+  color: var(--fg-strong);
+  border: 1px solid rgba(112, 115, 124, 0.43);
+}
+.erp-btn.is-secondary:hover {
+  background: rgba(112, 115, 124, 0.05);
+}
+
+/* Modal */
+.erp-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 23, 25, 0.52);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+.erp-dialog {
+  width: 480px;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-overlay);
+  position: relative;
+  padding: 36px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.erp-dialog-x {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-normal);
+}
+.erp-dialog-x:hover {
+  background: rgba(112, 115, 124, 0.08);
+}
+.erp-dialog-x svg {
+  width: 18px;
+  height: 18px;
+}
+.erp-dialog-ico {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px auto 0;
+}
+.erp-dialog-ico.is-success {
+  background: var(--status-positive-bg);
+  color: var(--status-positive);
+}
+.erp-dialog-ico.is-fail {
+  background: var(--pill-rejected-bg);
+  color: var(--pill-rejected-fg);
+}
+.erp-dialog-ico svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 2.5;
+}
+
+.erp-dialog h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.0194em;
+  margin: 0;
+  text-align: center;
+}
+.erp-dialog-body {
+  font-size: 15px;
+  color: var(--fg-strong);
+  text-align: center;
+  margin: -8px 0 0;
+  letter-spacing: 0.0096em;
+}
+.erp-dialog-body .mono {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #000;
+}
+.erp-dialog-detail {
+  background: #fafafb;
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+}
+.erp-dialog-detail .row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 13px;
+}
+.erp-dialog-detail .row + .row {
+  border-top: 1px dashed var(--line-subtle);
+}
+.erp-dialog-detail .k {
+  color: var(--fg-normal);
+}
+.erp-dialog-detail .v {
+  color: var(--fg-strong);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: right;
+  justify-content: flex-end;
+}
+.erp-dialog-detail .v.mono {
+  font-family: var(--font-mono);
+}
+.erp-dialog-detail .v .strike {
+  text-decoration: line-through;
+  color: var(--fg-alternative);
+  font-weight: 500;
+}
+.erp-dialog-detail .v .arrow {
+  color: var(--fg-alternative);
+}
+.erp-dialog-detail .v.amount {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.012em;
+}
+.erp-dialog-detail .v.danger {
+  color: var(--pill-rejected-fg);
+}
+.erp-dialog-foot {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}

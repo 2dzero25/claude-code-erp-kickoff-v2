@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ORD-2001",
+    "customerId": "CUST-1001",
+    "customerGrade": "GOLD",
+    "status": "PENDING_APPROVAL",
+    "lines": [{ "productId": "P-NB-01", "quantity": 2, "unitPrice": 1500000 }]
+  },
+  {
+    "id": "ORD-2002",
+    "customerId": "CUST-1003",
+    "customerGrade": "NORMAL",
+    "status": "PENDING_APPROVAL",
+    "lines": [{ "productId": "P-MN-01", "quantity": 1, "unitPrice": 350000 }]
+  },
+  {
+    "id": "ORD-2003",
+    "customerId": "CUST-1002",
+    "customerGrade": "SILVER",
+    "status": "PENDING_APPROVAL",
+    "lines": [{ "productId": "P-KB-01", "quantity": 5, "unitPrice": 80000 }]
+  }
+]

@@ -1,0 +1,5 @@
+[
+  { "id": "CUST-1001", "name": "김민서", "grade": "GOLD" },
+  { "id": "CUST-1002", "name": "이도윤", "grade": "SILVER" },
+  { "id": "CUST-1003", "name": "박지호", "grade": "NORMAL" }
+]

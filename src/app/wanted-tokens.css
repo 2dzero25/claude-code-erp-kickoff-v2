@@ -1,0 +1,103 @@
+/*
+ * Wanted Design System tokens (subset used by this lab)
+ * Source: Wanted Design System (Community), Figma file
+ * License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+ */
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-ExtraBold.otf") format("opentype");
+}
+
+:root {
+  /* Foreground / text */
+  --fg-primary: #000000;
+  --fg-neutral: #171719;
+  --fg-strong: rgba(46, 47, 51, 0.88);
+  --fg-normal: rgba(55, 56, 60, 0.61);
+  --fg-alternative: rgba(55, 56, 60, 0.28);
+  --fg-on-color: #ffffff;
+  --fg-link: #0066ff;
+
+  /* Background */
+  --bg-base: #ffffff;
+  --bg-subtle: #f7f7f8;
+
+  /* Lines */
+  --line-subtle: rgba(112, 115, 124, 0.22);
+  --line-strong: rgba(112, 115, 124, 0.43);
+
+  /* Brand blue */
+  --brand-primary: #0066ff;
+  --brand-primary-hover: #005eeb;
+  --brand-primary-press: #0054d1;
+
+  /* Status */
+  --status-positive: #00bf40;
+  --status-positive-bg: #d9ffe6;
+  --status-positive-fg: #009632;
+  --status-cautionary: #ff9200;
+  --status-critical: #e52222;
+
+  /* Status pill backgrounds */
+  --pill-pending-bg: #fef4e6;
+  --pill-pending-fg: #d47800;
+  --pill-rejected-bg: #feecec;
+  --pill-rejected-fg: #e52222;
+  --pill-neutral-bg: #f4f4f5;
+
+  /* Grade chip */
+  --grade-gold-bg: #fef4e6;
+  --grade-gold-fg: #9c5800;
+  --grade-silver-bg: #eaebec;
+  --grade-silver-fg: #46474c;
+  --grade-normal-bg: #eaebec;
+  --grade-normal-fg: #5a5c63;
+
+  /* Typography */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Roboto Mono",
+    monospace;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-overlay: 0 24px 48px rgba(0, 0, 0, 0.16);
+}
